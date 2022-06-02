@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/menuLinearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FFE500"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="MENU"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menuLinearlayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/jackDanielsIMG"
+                android:layout_width="120dp"
+                android:layout_height="170dp"
+
+                android:src="@drawable/jackdaniels"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/jackDanielsName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="20dp"
+                android:text="Jack Daniels"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/jackDanielsIMG"
+                app:layout_constraintTop_toTopOf="@id/jackDanielsIMG" />
+
+            <TextView
+                android:id="@+id/jackDanielsPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Rs. 1150"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/jackDanielsBUY"
+                app:layout_constraintEnd_toEndOf="@id/jackDanielsName"
+                app:layout_constraintStart_toStartOf="@id/jackDanielsName"
+                app:layout_constraintTop_toBottomOf="@id/jackDanielsName" />
+
+            <Button
+                android:id="@+id/jackDanielsBUY"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/custom_buy_btn"
+                android:text="BUY"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/jackDanielsIMG"
+                app:layout_constraintEnd_toEndOf="@id/jackDanielsPrice"
+                app:layout_constraintStart_toStartOf="@id/jackDanielsPrice"
+                app:layout_constraintTop_toBottomOf="@id/jackDanielsPrice" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/johnnieWalkerIMG"
+                android:layout_width="120dp"
+                android:layout_height="170dp"
+                android:src="@drawable/johnniewalker"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/johnnieWalkerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="20dp"
+                android:text="Johnnie Walker"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/johnnieWalkerIMG"
+                app:layout_constraintTop_toTopOf="@id/johnnieWalkerIMG" />
+
+            <TextView
+                android:id="@+id/johnnieWalkerPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Rs. 2200"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/johnnieWalkerBUY"
+                app:layout_constraintEnd_toEndOf="@id/johnnieWalkerName"
+                app:layout_constraintStart_toStartOf="@id/johnnieWalkerName"
+                app:layout_constraintTop_toBottomOf="@id/johnnieWalkerName" />
+
+            <Button
+                android:id="@+id/johnnieWalkerBUY"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:background="@drawable/custom_buy_btn"
+                android:text="BUY"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/johnnieWalkerIMG"
+                app:layout_constraintEnd_toEndOf="@id/johnnieWalkerPrice"
+                app:layout_constraintStart_toStartOf="@id/johnnieWalkerPrice"
+                app:layout_constraintTop_toBottomOf="@id/johnnieWalkerPrice" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/heinekenIMG"
+                android:layout_width="120dp"
+                android:layout_height="170dp"
+                android:src="@drawable/heineken"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/heinekenName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="20dp"
+                android:text="Heineken"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/heinekenIMG"
+                app:layout_constraintTop_toTopOf="@id/heinekenIMG" />
+
+            <TextView
+                android:id="@+id/heinekenPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Rs. 950"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/heinekenBUY"
+                app:layout_constraintEnd_toEndOf="@id/heinekenName"
+                app:layout_constraintStart_toStartOf="@id/heinekenName"
+                app:layout_constraintTop_toBottomOf="@id/heinekenName" />
+
+            <Button
+                android:id="@+id/heinekenBUY"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/custom_buy_btn"
+                android:gravity="center"
+                android:text="BUY"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/heinekenIMG"
+                app:layout_constraintEnd_toEndOf="@id/heinekenPrice"
+                app:layout_constraintStart_toStartOf="@id/heinekenPrice"
+                app:layout_constraintTop_toBottomOf="@id/heinekenPrice" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

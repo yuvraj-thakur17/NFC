@@ -15,16 +15,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements Listener {
+public class WriteData extends AppCompatActivity implements Listener {
 
     public static final String TAG = MainActivity.class.getSimpleName();
 
-    private EditText mEtMessage;
     private Button mBtWrite;
-    private Button mBtRead;
+    private EditText mEtItemCode;
+    private EditText mEtItemdescription;
 
     private NFCWriteFragment mNfcWriteFragment;
-    private NFCReadFragment mNfcReadFragment;
 
     private boolean isDialogDisplayed = false;
     private boolean isWrite = false;
@@ -34,39 +33,34 @@ public class MainActivity extends AppCompatActivity implements Listener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_write_data);
         initViews();
         initNFC();
     }
 
     private void initViews() {
 
-        // mEtMessage = (EditText) findViewById(R.id.et_message);
-        mBtWrite = (Button) findViewById(R.id.btn_write);
-        mBtRead = (Button) findViewById(R.id.btn_read);
+        mEtItemCode = (EditText) findViewById(R.id.etItemNumber);
+        mBtWrite = (Button) findViewById(R.id.btnWriteItemCode);
+        mEtItemdescription=(EditText)findViewById(R.id.etItemDescription);
 
-        mBtRead.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showReadFragment();
-            }
-        });
         mBtWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,WriteData.class);
-                startActivity(intent);
-                //showWriteFragment();
+                if(mEtItemCode.getText().toString().trim().length()!=0 && mEtItemdescription.getText().toString().trim().length()!=0) {
+                    showWriteFragment();
+                }
+                else {
+                    Toast.makeText(WriteData.this,"Invalid Item code or Item Description",Toast.LENGTH_LONG).show();
+                }
             }
         });
-    }
 
+    }
     private void initNFC(){
 
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
     }
-
     private void showWriteFragment() {
 
         isWrite = true;
@@ -79,52 +73,6 @@ public class MainActivity extends AppCompatActivity implements Listener {
         }
         mNfcWriteFragment.show(getFragmentManager(),NFCWriteFragment.TAG);
 
-    }
-
-    private void showReadFragment() {
-
-        mNfcReadFragment = (NFCReadFragment) getFragmentManager().findFragmentByTag(NFCReadFragment.TAG);
-
-        if (mNfcReadFragment == null) {
-
-            mNfcReadFragment = NFCReadFragment.newInstance();
-        }
-        mNfcReadFragment.show(getFragmentManager(),NFCReadFragment.TAG);
-
-    }
-
-
-    @Override
-    public void onDialogDisplayed() {
-        isDialogDisplayed = true;
-    }
-
-    @Override
-    public void onDialogDismissed() {
-        isDialogDisplayed = false;
-        isWrite = false;
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
-        IntentFilter ndefDetected = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
-        IntentFilter techDetected = new IntentFilter(NfcAdapter.ACTION_TECH_DISCOVERED);
-        IntentFilter[] nfcIntentFilter = new IntentFilter[]{techDetected,tagDetected,ndefDetected};
-
-        PendingIntent pendingIntent = PendingIntent.getActivity(
-                this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
-        if(mNfcAdapter!= null)
-            mNfcAdapter.enableForegroundDispatch(this, pendingIntent, nfcIntentFilter, null);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if(mNfcAdapter!= null)
-            mNfcAdapter.disableForegroundDispatch(this);
     }
 
     @Override
@@ -142,17 +90,45 @@ public class MainActivity extends AppCompatActivity implements Listener {
 
                 if (isWrite) {
 
-                    String messageToWrite = mEtMessage.getText().toString();
-                    //String[] messageToWrite= {mEtMessage.getText().toString(),"JW RED LABEL"};
+                    String messageToWrite = mEtItemCode.getText().toString().trim() + "%" +  mEtItemdescription.getText().toString().trim();
+                    //String messageToWrite[] = {mEtMessage.getText().toString(),"JW RED LABEL"};
                     mNfcWriteFragment = (NFCWriteFragment) getFragmentManager().findFragmentByTag(NFCWriteFragment.TAG);
                     mNfcWriteFragment.onNfcDetected(ndef,messageToWrite);
 
-                } else {
-
-                    mNfcReadFragment = (NFCReadFragment)getFragmentManager().findFragmentByTag(NFCReadFragment.TAG);
-                    mNfcReadFragment.onNfcDetected(ndef);
                 }
             }
         }
+    }
+
+    @Override
+    public void onDialogDisplayed() {
+        isDialogDisplayed = true;
+    }
+
+    @Override
+    public void onDialogDismissed() {
+        isDialogDisplayed = false;
+        isWrite = false;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(mNfcAdapter!= null)
+            mNfcAdapter.disableForegroundDispatch(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
+        IntentFilter ndefDetected = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
+        IntentFilter techDetected = new IntentFilter(NfcAdapter.ACTION_TECH_DISCOVERED);
+        IntentFilter[] nfcIntentFilter = new IntentFilter[]{techDetected,tagDetected,ndefDetected};
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+        if(mNfcAdapter!= null)
+            mNfcAdapter.enableForegroundDispatch(this, pendingIntent, nfcIntentFilter, null);
     }
 }
