@@ -27,16 +27,30 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tvTotalAmountDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="Your total amount is Rs. 0"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/cardView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menuLinearlayout" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/menuLinearlayout">
+        app:layout_constraintTop_toBottomOf="@id/tvTotalAmountDisplay">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -67,7 +81,7 @@
                 app:layout_constraintTop_toTopOf="@id/jackDanielsIMG" />
 
             <TextView
-                android:id="@+id/jackDanielsPrice"
+                android:id="@+id/tvjackDanielsPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -75,27 +89,27 @@
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/jackDanielsBUY"
+                app:layout_constraintBottom_toTopOf="@id/btnjackDanielsBUY"
                 app:layout_constraintEnd_toEndOf="@id/jackDanielsName"
                 app:layout_constraintStart_toStartOf="@id/jackDanielsName"
                 app:layout_constraintTop_toBottomOf="@id/jackDanielsName" />
 
             <Button
-                android:id="@+id/jackDanielsBUY"
+                android:id="@+id/btnjackDanielsBUY"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/custom_buy_btn"
+                android:gravity="center"
                 android:text="BUY"
                 android:textColor="#FFFFFF"
-                android:gravity="center"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/jackDanielsIMG"
-                app:layout_constraintEnd_toEndOf="@id/jackDanielsPrice"
-                app:layout_constraintStart_toStartOf="@id/jackDanielsPrice"
-                app:layout_constraintTop_toBottomOf="@id/jackDanielsPrice" />
+                app:layout_constraintEnd_toEndOf="@id/tvjackDanielsPrice"
+                app:layout_constraintStart_toStartOf="@id/tvjackDanielsPrice"
+                app:layout_constraintTop_toBottomOf="@id/tvjackDanielsPrice" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -141,7 +155,7 @@
                 app:layout_constraintTop_toTopOf="@id/johnnieWalkerIMG" />
 
             <TextView
-                android:id="@+id/johnnieWalkerPrice"
+                android:id="@+id/tvjohnnieWalkerPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -149,27 +163,27 @@
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/johnnieWalkerBUY"
+                app:layout_constraintBottom_toTopOf="@id/btnjohnnieWalkerBUY"
                 app:layout_constraintEnd_toEndOf="@id/johnnieWalkerName"
                 app:layout_constraintStart_toStartOf="@id/johnnieWalkerName"
                 app:layout_constraintTop_toBottomOf="@id/johnnieWalkerName" />
 
             <Button
-                android:id="@+id/johnnieWalkerBUY"
+                android:id="@+id/btnjohnnieWalkerBUY"
                 android:layout_width="120dp"
-                android:layout_height="48dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
-                android:gravity="center"
                 android:background="@drawable/custom_buy_btn"
+                android:gravity="center"
                 android:text="BUY"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/johnnieWalkerIMG"
-                app:layout_constraintEnd_toEndOf="@id/johnnieWalkerPrice"
-                app:layout_constraintStart_toStartOf="@id/johnnieWalkerPrice"
-                app:layout_constraintTop_toBottomOf="@id/johnnieWalkerPrice" />
+                app:layout_constraintEnd_toEndOf="@id/tvjohnnieWalkerPrice"
+                app:layout_constraintStart_toStartOf="@id/tvjohnnieWalkerPrice"
+                app:layout_constraintTop_toBottomOf="@id/tvjohnnieWalkerPrice" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -214,7 +228,7 @@
                 app:layout_constraintTop_toTopOf="@id/heinekenIMG" />
 
             <TextView
-                android:id="@+id/heinekenPrice"
+                android:id="@+id/tvheinekenPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -222,13 +236,13 @@
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/heinekenBUY"
+                app:layout_constraintBottom_toTopOf="@id/btnheinekenBUY"
                 app:layout_constraintEnd_toEndOf="@id/heinekenName"
                 app:layout_constraintStart_toStartOf="@id/heinekenName"
                 app:layout_constraintTop_toBottomOf="@id/heinekenName" />
 
             <Button
-                android:id="@+id/heinekenBUY"
+                android:id="@+id/btnheinekenBUY"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -240,9 +254,9 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/heinekenIMG"
-                app:layout_constraintEnd_toEndOf="@id/heinekenPrice"
-                app:layout_constraintStart_toStartOf="@id/heinekenPrice"
-                app:layout_constraintTop_toBottomOf="@id/heinekenPrice" />
+                app:layout_constraintEnd_toEndOf="@id/tvheinekenPrice"
+                app:layout_constraintStart_toStartOf="@id/tvheinekenPrice"
+                app:layout_constraintTop_toBottomOf="@id/tvheinekenPrice" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

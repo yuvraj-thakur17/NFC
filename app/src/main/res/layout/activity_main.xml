@@ -19,13 +19,22 @@
         android:background="#FFE500"
         android:textColor="#000000"/>
 
+<!--    <Button-->
+<!--        android:id="@+id/btn_read"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_below="@+id/btn_write"-->
+<!--        android:layout_marginTop="@dimen/activity_horizontal_margin"-->
+<!--        android:text="@string/message_read_tag"-->
+<!--        android:background="#FFE500"-->
+<!--        android:textColor="#000000"/>-->
+
     <Button
-        android:id="@+id/btn_read"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@+id/btn_write"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:text="@string/message_read_tag"
+        android:id="@+id/goToMenuBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        android:layout_marginTop="16dp"
         android:background="#FFE500"
         android:textColor="#000000"/>
 
