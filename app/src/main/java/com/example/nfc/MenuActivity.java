@@ -32,9 +32,9 @@ public class MenuActivity extends AppCompatActivity {
 
         totalAmountDisplay=findViewById(R.id.tvTotalAmountDisplay);
 
-        jackDanielsBuyBtn=findViewById(R.id.btnjackDanielsBUY);
-        johnnieWalkerBuyBtn=findViewById(R.id.btnjohnnieWalkerBUY);
-        heinekenBuyBtn=findViewById(R.id.btnheinekenBUY);
+        jackDanielsBuyBtn=(Button) findViewById(R.id.btnjackDanielsBUY);
+        johnnieWalkerBuyBtn=(Button) findViewById(R.id.btnjohnnieWalkerBUY);
+        heinekenBuyBtn=(Button) findViewById(R.id.btnheinekenBUY);
 
         jackDanielsBuyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,4 +66,5 @@ public class MenuActivity extends AppCompatActivity {
             ex.printStackTrace();
         }
     }
+
 }

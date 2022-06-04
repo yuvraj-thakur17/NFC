@@ -21,7 +21,7 @@ public class WriteData extends AppCompatActivity implements Listener {
 
     private Button mBtWrite;
     private EditText mEtItemCode;
-    private EditText mEtItemdescription;
+//    private EditText mEtItemdescription;
 
     private NFCWriteFragment mNfcWriteFragment;
 
@@ -42,16 +42,16 @@ public class WriteData extends AppCompatActivity implements Listener {
 
         mEtItemCode = (EditText) findViewById(R.id.etItemNumber);
         mBtWrite = (Button) findViewById(R.id.btnWriteItemCode);
-        mEtItemdescription=(EditText)findViewById(R.id.etItemDescription);
+//        mEtItemdescription=(EditText)findViewById(R.id.etItemDescription);
 
         mBtWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mEtItemCode.getText().toString().trim().length()!=0 && mEtItemdescription.getText().toString().trim().length()!=0) {
+                if(mEtItemCode.getText().toString().trim().length()!=0) {
                     showWriteFragment();
                 }
                 else {
-                    Toast.makeText(WriteData.this,"Invalid Item code or Item Description",Toast.LENGTH_LONG).show();
+                    Toast.makeText(WriteData.this,"Invalid Phone Number",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -90,7 +90,7 @@ public class WriteData extends AppCompatActivity implements Listener {
 
                 if (isWrite) {
 
-                    String messageToWrite = mEtItemCode.getText().toString().trim() + "%" +  mEtItemdescription.getText().toString().trim();
+                    String messageToWrite = mEtItemCode.getText().toString().trim();
                     //String messageToWrite[] = {mEtMessage.getText().toString(),"JW RED LABEL"};
                     mNfcWriteFragment = (NFCWriteFragment) getFragmentManager().findFragmentByTag(NFCWriteFragment.TAG);
                     mNfcWriteFragment.onNfcDetected(ndef,messageToWrite);
