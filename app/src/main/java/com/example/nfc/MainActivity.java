@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements Listener {
     private Button goToMenuBtn;
 
     private NFCWriteFragment mNfcWriteFragment;
-//    private NFCReadFragment mNfcReadFragment;
+    private NFCReadFragment mNfcReadFragment;
 
     private boolean isDialogDisplayed = false;
     private boolean isWrite = false;
@@ -43,18 +43,19 @@ public class MainActivity extends AppCompatActivity implements Listener {
 
     private void initViews() {
 
-        // mEtMessage = (EditText) findViewById(R.id.et_message);
+         mEtMessage = (EditText) findViewById(R.id.et_message);
         mBtWrite = (Button) findViewById(R.id.btn_write);
-//        mBtRead = (Button) findViewById(R.id.btn_read);
+        mBtRead = (Button) findViewById(R.id.btn_read);
 
         goToMenuBtn=(Button) findViewById(R.id.goToMenuBtn);
 
-//        mBtRead.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                showReadFragment();
-//            }
-//        });
+        mBtRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showReadFragment();
+            }
+        });
+
         mBtWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,17 +93,17 @@ public class MainActivity extends AppCompatActivity implements Listener {
 
     }
 
-//    private void showReadFragment() {
-//
-//        mNfcReadFragment = (NFCReadFragment) getFragmentManager().findFragmentByTag(NFCReadFragment.TAG);
-//
-//        if (mNfcReadFragment == null) {
-//
-//            mNfcReadFragment = NFCReadFragment.newInstance();
-//        }
-//        mNfcReadFragment.show(getFragmentManager(),NFCReadFragment.TAG);
-//
-//    }
+    private void showReadFragment() {
+
+        mNfcReadFragment = (NFCReadFragment) getFragmentManager().findFragmentByTag(NFCReadFragment.TAG);
+
+        if (mNfcReadFragment == null) {
+
+            mNfcReadFragment = NFCReadFragment.newInstance();
+        }
+        mNfcReadFragment.show(getFragmentManager(),NFCReadFragment.TAG);
+
+    }
 
 
     @Override
@@ -159,9 +160,9 @@ public class MainActivity extends AppCompatActivity implements Listener {
                     mNfcWriteFragment.onNfcDetected(ndef,messageToWrite);
 
                 } else {
-//
-//                    mNfcReadFragment = (NFCReadFragment)getFragmentManager().findFragmentByTag(NFCReadFragment.TAG);
-//                    mNfcReadFragment.onNfcDetected(ndef);
+
+                    mNfcReadFragment = (NFCReadFragment)getFragmentManager().findFragmentByTag(NFCReadFragment.TAG);
+                    mNfcReadFragment.onNfcDetected(ndef);
                 }
             }
         }
