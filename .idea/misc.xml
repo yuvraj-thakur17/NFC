@@ -6,10 +6,12 @@
         <entry key="..\:/New Android Projects/NFC/app/src/main/res/drawable-v24/buttonbg.xml" value="0.14930555555555555" />
         <entry key="..\:/New Android Projects/NFC/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.14930555555555555" />
         <entry key="..\:/New Android Projects/NFC/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14930555555555555" />
+        <entry key="..\:/New Android Projects/NFC/app/src/main/res/layout/activity_add_amount_to_tag.xml" value="0.20416666666666666" />
         <entry key="..\:/New Android Projects/NFC/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/New Android Projects/NFC/app/src/main/res/layout/activity_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/New Android Projects/NFC/app/src/main/res/layout/activity_nfcread_fragment.xml" value="0.153125" />
         <entry key="..\:/New Android Projects/NFC/app/src/main/res/layout/activity_nfcwrite_fragment.xml" value="0.153125" />
+        <entry key="..\:/New Android Projects/NFC/app/src/main/res/layout/activity_write_amont_to_tag_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/New Android Projects/NFC/app/src/main/res/layout/activity_write_data.xml" value="0.153125" />
         <entry key="..\:/New Android Projects/NFC/app/src/main/res/layout/menu_layout.xml" value="0.153125" />
         <entry key="..\:/New Android Projects/NFC/app/src/main/res/layout/register_layout.xml" value="0.153125" />

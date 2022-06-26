@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/ShanTheme">
         <activity
+            android:name=".WriteAmontToTagFragment"
+            android:exported="false" />
+        <activity
+            android:name=".AddAmountToTag"
+            android:exported="false" />
+        <activity
             android:name=".MenuActivity"
             android:exported="false" />
         <activity android:name=".WriteData" />
